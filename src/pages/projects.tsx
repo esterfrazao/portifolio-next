@@ -19,7 +19,13 @@ export default function Home() {
           if (!repo.fork) {
             return (
               <div key={repo.id}>
-                <h2>{repo.name} </h2>
+                <a
+                  href={repo.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {repo.name}{" "}
+                </a>
               </div>
             );
           }

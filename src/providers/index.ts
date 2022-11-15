@@ -1,10 +1,6 @@
-import { ReactNode } from "react";
+import { IProps } from "../interfaces/reactProps.interface";
 import { RepositorieProvider } from "./repositories";
 
-export interface IProps {
-  children: ReactNode;
-}
-
-export default function APIProvider({ children }: IProps) {
+export function APIProvider({ children }: IProps) {
   return RepositorieProvider({ children });
 }

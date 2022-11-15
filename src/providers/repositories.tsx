@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import { IProps } from ".";
+import { IProps } from "../interfaces/reactProps.interface";
 
 interface IProject {
   id: string;
