@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRepositories } from "../providers/repositories";
+import { BagdesContainer, Text } from "../styles/About";
 import {
   Card,
   Container,
@@ -13,6 +15,8 @@ import {
 } from "../styles/Home";
 
 export default function Home() {
+  const { repositories } = useRepositories();
+
   return (
     <Container>
       <Head>
@@ -35,33 +39,57 @@ export default function Home() {
           </Description>
         </Section>
         <Section datatype="dark">
-          <Grid>
-            <Card href="https://nextjs.org/docs">
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </Card>
-
-            <Card href="https://nextjs.org/learn">
-              <h2>Learn &rarr;</h2>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </Card>
-
-            <Card href="https://github.com/vercel/next.js/tree/canary/examples">
-              <h2>Examples &rarr;</h2>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </Card>
-
-            <Card
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          <Text>
+            Fascinada em aprender e experimentar, fui atraída desde a infância
+            por tecnologia. E por meio de contatos e de pesquisas próprias
+            acabei estudando algumas coisas da área de tecnologia, e foi com o
+            suporte da Kenzie Academy Brasil que entrei profissionalmente nessa
+            área.E agora estou em busca de uma vaga integral como desenvolvedora
+            para desenvolver minhas habilidades tecnólogicas e sociais.
+          </Text>
+          <div>
+            <button>Entrar em Contato</button>
+            <a
+              href="https://drive.google.com/file/d/1YbIk2jK04L0SL_ga3d9s2LFJvx_Bqw-Y/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2>Deploy &rarr;</h2>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </Card>
-          </Grid>
+              PDF Currículo
+            </a>
+          </div>
+        </Section>
+        <BagdesContainer>
+          <Image src="/html5_badge.png" alt="HTML Badge" />
+          <Image src="/css_badge.png" alt="CSS Badge" />
+          <Image src="/javascript_badge.png" alt="Javascript Badge" />
+          <Image src="/react_badge.png" alt="React Badge" />
+          <Image src="/nodejs_badge.png" alt="Node Js Badge" />
+          <Image src="/python_badge.png" alt="Python Badge" />
+          <Image src="/django_badge.png" alt="Django Badge" />
+        </BagdesContainer>
+        <Section datatype="dark">
+          <h3>Formada na Kenzie Academy Brasil</h3>
+          <p>Espaço para descrição da formação</p>
+          <p>Talvez imagem do certificado</p>
+        </Section>
+        <Section datatype="light">
+          <Title>Projetos</Title>
+          {repositories?.slice(0, 3).map((repo) => {
+            if (!repo.fork) {
+              return (
+                <div key={repo.id}>
+                  <a
+                    href={repo.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {repo.name}
+                  </a>
+                </div>
+              );
+            }
+          })}
+          <button>Visualizou todos os projetos</button>
         </Section>
       </Main>
 
@@ -71,7 +99,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          2022 - <em>Ester Frazão</em> - Web Developer - Todos os direitos reservados | Design por Jackson Carelli
+          2022 - <em>Ester Frazão</em> - Web Developer - Todos os direitos
+          reservados | Design por Jackson Carelli
           <span>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
