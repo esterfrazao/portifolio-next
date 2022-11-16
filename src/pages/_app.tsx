@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={collorPallete}>
         <APIProvider>
           <GlobalStyle />
-          <Header></Header>
+          <Header />
           <Component {...pageProps} />
         </APIProvider>
       </ThemeProvider>
