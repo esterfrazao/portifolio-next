@@ -7,7 +7,7 @@ export default function Header() {
     <HeaderContainer>
       <NavBar>
         <Link href="/">Home</Link>
-        <Link href="">Sobre</Link>
+        <Link href="/about">Sobre</Link>
         <Link href="/projects">Projetos</Link>
       </NavBar>
       <ContactsContainer>
