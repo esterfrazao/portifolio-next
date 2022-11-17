@@ -2,11 +2,12 @@ import Head from "next/head";
 import {
   BagdesContainer,
   ButtonsContainer,
+  ExperienceContainer,
   PresentationContainer,
   Scroll,
   Text,
 } from "../styles/About";
-import { Container, Main, Section, Title } from "../styles/Home";
+import { Container, Title, Section } from "../styles";
 import Image from "next/image";
 import IconButton from "../components/IconButton";
 import { BsDownload, BsWhatsapp, BsChevronDown } from "react-icons/bs";
@@ -60,6 +61,7 @@ export default function About() {
           </ButtonsContainer>
         </PresentationContainer>
         <Image
+          priority={true}
           width={400}
           height={430}
           src="/my_profile.jpeg"
@@ -106,28 +108,51 @@ export default function About() {
           alt="Django Badge"
         />
       </BagdesContainer>
-      <Section datatype="light">
-        <h2>Experiências Acadêmica</h2>
-        <div>
-          <Image
-            width={80}
-            height={80}
-            src="/kenzie_logo.png"
-            alt="Logo da Kenzie"
-          />
-          <h3>Kenzie Academy Brasil</h3>
-        </div>
+      <Section datatype="dark">
+        <ExperienceContainer>
+          <h2>Experiência Acadêmica</h2>
+          <div className="experience-box">
+            <Image
+              width={120}
+              height={120}
+              src="/kenzie_logo.png"
+              alt="Logo da Kenzie"
+            />
+            <div className="vertical-line"></div>
+            <div>
+              <h3>Fullstack Developer - Kenzie Academy Brasil</h3>
+              <span>Novembro de 2021 - Novembro de 2022</span>
+              <p>
+                Curso de 2.000 horas de Desenvolvimento Full Stack que abrange
+                tecnologias Front End e Back End além de soft skills necessárias
+                para o mercado de trabalho. Entre as linguagens e tecnologias
+                aprendidas, estão HTML5, CSS3, JavaScript (ES6+), React,
+                Node.js, Python (Django) e SQL.
+              </p>
+            </div>
+          </div>
 
-        <h2>Histórico de Trabalho</h2>
-        <div>
-          <Image
-            width={80}
-            height={80}
-            src="/kenzie_logo.png"
-            alt="Logo da Kenzie"
-          />
-          <h3>Kenzie Academy Brasil</h3>
-        </div>
+          <h2>Histórico de Trabalho</h2>
+          <div className="experience-box">
+            <Image
+              width={120}
+              height={120}
+              src="/kenzie_logo.png"
+              alt="Logo da Kenzie"
+            />
+            <div className="vertical-line"></div>
+            <div>
+              <h3>Monitoria - Kenzie Academy Brasil</h3>
+              <span>Fevereiro de 2022 - atualmente</span>
+              <p>
+                Atuava fazendo code Review em HTML5, CSS3, Javascript, React JS,
+                Node JS, Typescript, Python e Django, acompanhamento e
+                supervisão de lógica de programação e clean code de
+                desenvolvedores Júnior da academia.
+              </p>
+            </div>
+          </div>
+        </ExperienceContainer>
       </Section>
     </Container>
   );
