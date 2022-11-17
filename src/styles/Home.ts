@@ -15,9 +15,13 @@ export const Main = styled.main`
 `;
 
 export const Section = styled.section`
+  position: relative;
   padding: 4rem 2rem;
   height: 90vh;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
   background-color: ${({ theme, datatype }) =>
     datatype === "dark"
       ? theme.color.monochromatics.grey2
@@ -46,16 +50,22 @@ export const Footer = styled.footer`
 
 export const Title = styled.h1`
   margin: 0;
+  padding: 10px 25px;
   line-height: 1.15;
   font-size: 2rem;
   text-align: center;
   width: 100%;
   color: ${({ theme }) => theme.color.monochromatics.grey1};
+  background: #ffffff00;
 
-  b {
+  /* b {
     font-weight: 900;
     font-size: 3rem;
     color: ${({ theme }) => theme.color.monochromatics.black};
+  } */
+
+  @media (min-width: 700px) {
+    text-align: left;
   }
 `;
 
@@ -65,6 +75,10 @@ export const Description = styled.p`
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+
+  @media (min-width: 700px) {
+    text-align: left;
+  }
 `;
 
 export const Tag = styled.span`
