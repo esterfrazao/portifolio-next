@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 8px 20px;
+  padding: 0 20px;
   border-radius: 8px;
   width: fit-content;
   background-color: ${({ color, theme }) =>
@@ -18,11 +18,14 @@ export const ButtonContainer = styled.div`
     color: ${({ color, theme }) =>
       color === "green"
         ? theme.color.monochromatics.white
-        : theme.color.greens.green3};
+        : theme.color.greens.green4};
   }
 
   p {
-    color: ${({ theme }) => theme.color.monochromatics.white};
+    color: ${({ color, theme }) =>
+      color === "white"
+        ? theme.color.monochromatics.grey3
+        : theme.color.monochromatics.white};
   }
 
   :hover {
