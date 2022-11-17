@@ -4,6 +4,19 @@ export const Container = styled.div`
   width: 100%;
 `;
 
+export const Title = styled.h1`
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  color: ${({ theme }) => theme.color.monochromatics.grey1};
+
+  @media (min-width: 700px) {
+    text-align: left;
+  }
+`;
+
 export const Main = styled.main`
   flex: 1;
   display: flex;
@@ -17,7 +30,7 @@ export const Main = styled.main`
 export const Section = styled.section`
   position: relative;
   padding: 4rem 2rem;
-  height: 90vh;
+  min-height: 90vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -45,27 +58,6 @@ export const Footer = styled.footer`
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-  }
-`;
-
-export const Title = styled.h1`
-  margin: 0;
-  padding: 10px 25px;
-  line-height: 1.15;
-  font-size: 2rem;
-  text-align: center;
-  width: 100%;
-  color: ${({ theme }) => theme.color.monochromatics.grey1};
-  background: #ffffff00;
-
-  /* b {
-    font-weight: 900;
-    font-size: 3rem;
-    color: ${({ theme }) => theme.color.monochromatics.black};
-  } */
-
-  @media (min-width: 700px) {
-    text-align: left;
   }
 `;
 
