@@ -1,10 +1,22 @@
 import Head from "next/head";
 import Image from "next/image";
+import IconButton from "../components/IconButton";
 import { useRepositories } from "../providers/repositories";
-import { BagdesContainer, Text } from "../styles/About";
+import {
+  BagdesContainer,
+  ButtonsContainer,
+  PresentationContainer,
+  Scroll,
+  Text,
+} from "../styles/About";
+import {
+  BsWhatsapp,
+  BsDownload,
+  BsGithub,
+  BsChevronDown,
+} from "react-icons/bs";
 import {
   Card,
-  Container,
   Description,
   Footer,
   Grid,
@@ -12,7 +24,9 @@ import {
   Section,
   Tag,
   Title,
-} from "../styles/Home";
+  Container,
+} from "../styles";
+import Link from "next/link";
 
 export default function Home() {
   const { repositories } = useRepositories();
@@ -25,20 +39,53 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main>
-        <Section datatype="light">
+      <Section datatype="light">
+        <PresentationContainer>
           <Tag>Fullstack Developer Jr.</Tag>
-          <Title>
-            Olá, eu sou <b>Ester Frazão!</b>
-          </Title>
+          <Title style={{ marginTop: "20px" }}>Olá, eu sou Ester Frazão!</Title>
           <Description>
             Desenvolvedora web FullStack formada pela Kenzie Academy Brasil, em
             busca de uma posição no mercado de trabalho de tecnologia, com
             conhecimentos em HTML, CSS, Javasvript, React JS, Node Js, Python e
             Django.
           </Description>
-        </Section>
-        <Section datatype="dark">
+          <a
+            href="https://wa.me/qr/EXQSKL3G4MAKM1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconButton color="green" icon={<BsWhatsapp />}>
+              Entrar em Contato
+            </IconButton>
+          </a>
+        </PresentationContainer>
+        <Image
+          priority={true}
+          width={400}
+          height={500}
+          src="/coding.jpg"
+          alt="profile"
+          style={{
+            borderRadius: "15px",
+          }}
+        />
+        <Scroll>
+          <BsChevronDown />
+        </Scroll>
+      </Section>
+      <Section datatype="dark">
+        <Image
+          priority={true}
+          width={550}
+          height={430}
+          src="/desenvolvedor_web.webp"
+          alt="profile"
+          style={{
+            borderRadius: "15px",
+          }}
+        />
+        <PresentationContainer>
+          <h2>Sobre mim</h2>
           <Text>
             Fascinada em aprender e experimentar, fui atraída desde a infância
             por tecnologia. E por meio de contatos e de pesquisas próprias
@@ -47,51 +94,88 @@ export default function Home() {
             área.E agora estou em busca de uma vaga integral como desenvolvedora
             para desenvolver minhas habilidades tecnólogicas e sociais.
           </Text>
-          <div>
-            <button>Entrar em Contato</button>
+          <ButtonsContainer>
+            <a
+              href="https://wa.me/qr/EXQSKL3G4MAKM1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconButton color="green" icon={<BsWhatsapp />}>
+                Entrar em Contato
+              </IconButton>
+            </a>
             <a
               href="https://drive.google.com/file/d/1YbIk2jK04L0SL_ga3d9s2LFJvx_Bqw-Y/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
-              PDF Currículo
+              <IconButton color="black" icon={<BsDownload />}>
+                PDF Currículo
+              </IconButton>
             </a>
-          </div>
-        </Section>
-        <BagdesContainer>
-          <Image src="/html5_badge.png" alt="HTML Badge" />
-          <Image src="/css_badge.png" alt="CSS Badge" />
-          <Image src="/javascript_badge.png" alt="Javascript Badge" />
-          <Image src="/react_badge.png" alt="React Badge" />
-          <Image src="/nodejs_badge.png" alt="Node Js Badge" />
-          <Image src="/python_badge.png" alt="Python Badge" />
-          <Image src="/django_badge.png" alt="Django Badge" />
-        </BagdesContainer>
-        <Section datatype="dark">
-          <h3>Formada na Kenzie Academy Brasil</h3>
-          <p>Espaço para descrição da formação</p>
-          <p>Talvez imagem do certificado</p>
-        </Section>
-        <Section datatype="light">
-          <Title>Projetos</Title>
-          {repositories?.slice(0, 3).map((repo) => {
-            if (!repo.fork) {
-              return (
-                <div key={repo.id}>
-                  <a
-                    href={repo.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {repo.name}
-                  </a>
-                </div>
-              );
-            }
-          })}
-          <button>Visualizou todos os projetos</button>
-        </Section>
-      </Main>
+          </ButtonsContainer>
+        </PresentationContainer>
+      </Section>
+      <BagdesContainer>
+        <Image width={40} height={40} src="/html5_badge.png" alt="HTML Badge" />
+        <Image width={40} height={40} src="/css_badge.png" alt="CSS Badge" />
+        <Image
+          width={40}
+          height={40}
+          src="/javascript_badge.png"
+          alt="Javascript Badge"
+        />
+        <Image
+          width={40}
+          height={40}
+          src="/react_badge.png"
+          alt="React Badge"
+        />
+        <Image
+          width={40}
+          height={40}
+          src="/nodejs_badge.png"
+          alt="Node Js Badge"
+        />
+        <Image
+          width={40}
+          height={40}
+          src="/python_badge.png"
+          alt="Python Badge"
+        />
+        <Image
+          width={40}
+          height={40}
+          src="/django_badge.png"
+          alt="Django Badge"
+        />
+      </BagdesContainer>
+      <Section datatype="dark">
+        <h3>Formada na Kenzie Academy Brasil</h3>
+        <p>Espaço para descrição da formação</p>
+        <p>Talvez imagem do certificado</p>
+      </Section>
+      <Section datatype="light">
+        <h2>Projetos</h2>
+        {repositories?.slice(0, 3).map((repo) => {
+          if (!repo.fork) {
+            return (
+              <div key={repo.id}>
+                <a
+                  href={repo.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {repo.name}
+                </a>
+              </div>
+            );
+          }
+        })}
+        <IconButton color="green" icon={<BsGithub />}>
+          <Link href="/projects">Visualizar todos os projetos</Link>
+        </IconButton>
+      </Section>
 
       <Footer>
         <a
