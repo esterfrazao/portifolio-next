@@ -3,14 +3,6 @@ import Image from "next/image";
 import IconButton from "../components/IconButton";
 import { useRepositories } from "../providers/repositories";
 import {
-  BagdesContainer,
-  ButtonsContainer,
-  ExperienceContainer,
-  PresentationContainer,
-  Scroll,
-  Text,
-} from "../styles/About";
-import {
   BsWhatsapp,
   BsDownload,
   BsGithub,
@@ -18,20 +10,20 @@ import {
   BsArrowUpRightSquare,
 } from "react-icons/bs";
 import {
-  Card,
   Description,
-  Footer,
-  Grid,
-  Main,
   Section,
   Tag,
-  Title,
   Container,
   Project,
   ProjectsContainer,
   CustomizedTitle,
   ProjectsSection,
   AboutSection,
+  BagdesContainer,
+  ButtonsContainer,
+  PresentationContainer,
+  Scroll,
+  Text,
 } from "../styles";
 import Link from "next/link";
 import titleFormatter from "../utils/titleFormatter";
@@ -217,24 +209,12 @@ export default function Home() {
             }
           })}
         </ProjectsContainer>
-        <IconButton color="green" icon={<BsArrowUpRightSquare />}>
-          <Link href="/projects">Visualizar todos os projetos</Link>
-        </IconButton>
+        <Link href="/projects">
+          <IconButton color="green" icon={<BsArrowUpRightSquare />}>
+            Visualizar todos os projetos
+          </IconButton>
+        </Link>
       </ProjectsSection>
-
-      <Footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          2022 - <em>Ester Frazão</em> - Web Developer - Todos os direitos
-          reservados | Design por Jackson Carelli
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </Footer>
     </Container>
   );
 }
