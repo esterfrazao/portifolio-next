@@ -1,13 +1,15 @@
 import Head from "next/head";
 import {
+  Container,
+  Title,
+  Section,
   BagdesContainer,
   ButtonsContainer,
   ExperienceContainer,
   PresentationContainer,
   Scroll,
   Text,
-} from "../styles/About";
-import { Container, Title, Section } from "../styles";
+} from "../styles";
 import Image from "next/image";
 import IconButton from "../components/IconButton";
 import { BsDownload, BsWhatsapp, BsChevronDown } from "react-icons/bs";

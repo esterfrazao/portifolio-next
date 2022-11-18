@@ -17,6 +17,7 @@ export const Title = styled.h1`
     text-align: left;
   }
 `;
+
 export const Main = styled.main`
   flex: 1;
   display: flex;
@@ -26,6 +27,15 @@ export const Main = styled.main`
   padding: 25px 40px;
 
   min-height: 90vh;
+`;
+
+export const Scroll = styled.div`
+  display: flex;
+  justify-content: center;
+  color: ${({ theme }) => theme.color.greens.green4};
+  font-size: 4rem;
+  position: absolute;
+  bottom: 0;
 `;
 
 export const Section = styled.section`
@@ -44,6 +54,25 @@ export const Section = styled.section`
     datatype === "light"
       ? theme.color.monochromatics.grey2
       : theme.color.monochromatics.grey8};
+`;
+
+export const Text = styled.p`
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+
+  @media (min-width: 700px) {
+    text-align: justify;
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  margin-top: 50px;
+
+  div:first-child {
+    margin-right: 20px;
+  }
 `;
 
 // HOME PAGE
@@ -108,54 +137,59 @@ export const AboutSection = styled(Section)`
   }
 `;
 
-export const Footer = styled.footer`
+// About Page
+export const BagdesContainer = styled.div`
+  width: 100%;
+  padding: 20px;
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
-  align-items: center;
+  background-color: ${({ theme }) => theme.color.monochromatics.grey1};
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+  img:not(:last-child) {
+    margin-right: 20px;
   }
 `;
 
-export const Grid = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+export const PresentationContainer = styled.div`
+  width: 55%;
 `;
 
-export const Card = styled.a`
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: black;
-  text-decoration: none;
-  border: 1px solid black;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-  :hover,
-  :focus,
-  :active {
-    color: #0070f3;
-    border-color: #0070f3;
-  }
+export const ExperienceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
   h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
-  p {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.5;
+
+  img {
+    border-radius: 5px;
+  }
+
+  .experience-box {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+
+    div {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        text-align: justify;
+      }
+    }
+
+    .vertical-line {
+      width: 5px;
+      border-left: ${({ theme }) => "3px dotted" + theme.color.greens.green2};
+    }
   }
 `;
 
@@ -191,28 +225,3 @@ export const Project = styled.div`
     margin: 0;
   }
 `;
-
-// .logo {
-//   height: 1em;
-//   margin-left: 0.5rem;
-// }
-
-// @media (max-width: 600px) {
-//   .grid {
-//     width: 100%;
-//     flex-direction: column;
-//   }
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   .card,
-//   .footer {
-//     border-color: #222;
-//   }
-//   .code {
-//     background: #111;
-//   }
-//   .logo img {
-//     filter: invert(1);
-//   }
-// }

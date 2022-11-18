@@ -1,11 +1,17 @@
 import Head from "next/head";
 import { useRepositories } from "../providers/repositories";
-import { Container, Main, Project, ProjectsContainer, Title } from "../styles";
+import {
+  Container,
+  Main,
+  Project,
+  ProjectsContainer,
+  Title,
+  ButtonsContainer,
+} from "../styles";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoVercel } from "react-icons/io5";
 import IconButton from "../components/IconButton";
 import titleFormatter from "../utils/titleFormatter";
-import { ButtonsContainer } from "../styles/About";
 
 export default function Home() {
   const { repositories } = useRepositories();
