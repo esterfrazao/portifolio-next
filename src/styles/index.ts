@@ -87,6 +87,27 @@ export const ProjectsSection = styled(Section)`
   }
 `;
 
+export const AboutSection = styled(Section)`
+  flex-direction: column;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .description {
+    width: 70%;
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      text-align: justify;
+    }
+  }
+`;
+
 export const Footer = styled.footer`
   display: flex;
   flex: 1;

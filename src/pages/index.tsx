@@ -5,6 +5,7 @@ import { useRepositories } from "../providers/repositories";
 import {
   BagdesContainer,
   ButtonsContainer,
+  ExperienceContainer,
   PresentationContainer,
   Scroll,
   Text,
@@ -30,6 +31,7 @@ import {
   ProjectsContainer,
   CustomizedTitle,
   ProjectsSection,
+  AboutSection,
 } from "../styles";
 import Link from "next/link";
 import titleFormatter from "../utils/titleFormatter";
@@ -159,11 +161,26 @@ export default function Home() {
           alt="Django Badge"
         />
       </BagdesContainer>
-      <Section datatype="dark">
-        <h3>Formada na Kenzie Academy Brasil</h3>
-        <p>Espaço para descrição da formação</p>
-        <p>Talvez imagem do certificado</p>
-      </Section>
+      <AboutSection datatype="dark">
+        <h2>Formada na Kenzie Academy Brasil</h2>
+        <Image
+          width={120}
+          height={120}
+          src="/kenzie_logo.png"
+          alt="Logo da Kenzie"
+        />
+        <div className="description">
+          <h3>Fullstack Developer</h3>
+          <span>Novembro de 2021 - Novembro de 2022</span>
+          <p>
+            Curso de 2.000 horas de Desenvolvimento Full Stack que abrange
+            tecnologias Front End e Back End além de soft skills necessárias
+            para o mercado de trabalho. Entre as linguagens e tecnologias
+            aprendidas, estão HTML5, CSS3, JavaScript (ES6+), React, Node.js,
+            Python (Django) e SQL.
+          </p>
+        </div>
+      </AboutSection>
       <ProjectsSection datatype="light">
         <h2>Projetos</h2>
         <ProjectsContainer style={{ width: "85%" }}>
