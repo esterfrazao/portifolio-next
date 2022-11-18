@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-`;
-
 export const Main = styled.main`
   flex: 1;
   display: flex;
@@ -48,27 +44,6 @@ export const Footer = styled.footer`
   }
 `;
 
-export const Title = styled.h1`
-  margin: 0;
-  padding: 10px 25px;
-  line-height: 1.15;
-  font-size: 2rem;
-  text-align: center;
-  width: 100%;
-  color: ${({ theme }) => theme.color.monochromatics.grey1};
-  background: #ffffff00;
-
-  /* b {
-    font-weight: 900;
-    font-size: 3rem;
-    color: ${({ theme }) => theme.color.monochromatics.black};
-  } */
-
-  @media (min-width: 700px) {
-    text-align: left;
-  }
-`;
-
 export const Description = styled.p`
   color: ${({ theme }) => theme.color.monochromatics.black};
   text-align: center;
@@ -87,6 +62,7 @@ export const Tag = styled.span`
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 4px;
+  margin-bottom: 15px;
 `;
 
 export const Grid = styled.div`
