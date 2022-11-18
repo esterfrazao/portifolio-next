@@ -183,7 +183,7 @@ export default function Home() {
       </AboutSection>
       <ProjectsSection datatype="light">
         <h2>Projetos</h2>
-        <ProjectsContainer style={{ width: "85%" }}>
+        <ProjectsContainer style={{ width: "95%" }}>
           {repositories?.slice(0, 6).map((repo) => {
             if (!repo.fork) {
               return (
