@@ -14,6 +14,7 @@ import {
   BsDownload,
   BsGithub,
   BsChevronDown,
+  BsArrowUpRightSquare,
 } from "react-icons/bs";
 import {
   Card,
@@ -25,8 +26,14 @@ import {
   Tag,
   Title,
   Container,
+  Project,
+  ProjectsContainer,
+  CustomizedTitle,
+  ProjectsSection,
 } from "../styles";
 import Link from "next/link";
+import titleFormatter from "../utils/titleFormatter";
+import { IoLogoVercel } from "react-icons/io5";
 
 export default function Home() {
   const { repositories } = useRepositories();
@@ -42,7 +49,9 @@ export default function Home() {
       <Section datatype="light">
         <PresentationContainer>
           <Tag>Fullstack Developer Jr.</Tag>
-          <Title style={{ marginTop: "20px" }}>Olá, eu sou Ester Frazão!</Title>
+          <CustomizedTitle>
+            Olá, eu sou <b>Ester Frazão!</b>
+          </CustomizedTitle>
           <Description>
             Desenvolvedora web FullStack formada pela Kenzie Academy Brasil, em
             busca de uma posição no mercado de trabalho de tecnologia, com
@@ -155,27 +164,46 @@ export default function Home() {
         <p>Espaço para descrição da formação</p>
         <p>Talvez imagem do certificado</p>
       </Section>
-      <Section datatype="light">
+      <ProjectsSection datatype="light">
         <h2>Projetos</h2>
-        {repositories?.slice(0, 3).map((repo) => {
-          if (!repo.fork) {
-            return (
-              <div key={repo.id}>
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {repo.name}
-                </a>
-              </div>
-            );
-          }
-        })}
-        <IconButton color="green" icon={<BsGithub />}>
+        <ProjectsContainer style={{ width: "85%" }}>
+          {repositories?.slice(0, 6).map((repo) => {
+            if (!repo.fork) {
+              return (
+                <Project key={repo.id}>
+                  <h3>{titleFormatter(repo.name)}</h3>
+                  <p>{repo.description}</p>
+                  <ButtonsContainer style={{ margin: 0 }}>
+                    <a
+                      href={repo.html_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <IconButton icon={<BsGithub />} color="green">
+                        Seguir para o repositório
+                      </IconButton>
+                    </a>
+                    {repo.homepage && (
+                      <a
+                        href={repo.homepage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <IconButton icon={<IoLogoVercel />} color="white">
+                          Website
+                        </IconButton>
+                      </a>
+                    )}
+                  </ButtonsContainer>
+                </Project>
+              );
+            }
+          })}
+        </ProjectsContainer>
+        <IconButton color="green" icon={<BsArrowUpRightSquare />}>
           <Link href="/projects">Visualizar todos os projetos</Link>
         </IconButton>
-      </Section>
+      </ProjectsSection>
 
       <Footer>
         <a

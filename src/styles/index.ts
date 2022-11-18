@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// GERAIS
 export const Container = styled.div`
   width: 100%;
 `;
@@ -16,7 +17,6 @@ export const Title = styled.h1`
     text-align: left;
   }
 `;
-
 export const Main = styled.main`
   flex: 1;
   display: flex;
@@ -46,6 +46,47 @@ export const Section = styled.section`
       : theme.color.monochromatics.grey8};
 `;
 
+// HOME PAGE
+export const Tag = styled.span`
+  background-color: ${({ theme }) => theme.color.monochromatics.grey7};
+  color: ${({ theme }) => theme.color.monochromatics.grey3};
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+`;
+
+export const CustomizedTitle = styled(Title)`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  b {
+    font-weight: 900;
+    font-size: 3rem;
+    color: ${({ theme }) => theme.color.monochromatics.black};
+  }
+`;
+
+export const Description = styled.p`
+  color: ${({ theme }) => theme.color.monochromatics.black};
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+
+  @media (min-width: 700px) {
+    text-align: left;
+  }
+`;
+
+export const ProjectsSection = styled(Section)`
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+`;
+
 export const Footer = styled.footer`
   display: flex;
   flex: 1;
@@ -60,26 +101,6 @@ export const Footer = styled.footer`
     align-items: center;
     flex-grow: 1;
   }
-`;
-
-export const Description = styled.p`
-  color: ${({ theme }) => theme.color.monochromatics.black};
-  text-align: center;
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-
-  @media (min-width: 700px) {
-    text-align: left;
-  }
-`;
-
-export const Tag = styled.span`
-  background-color: ${({ theme }) => theme.color.monochromatics.grey7};
-  color: ${({ theme }) => theme.color.monochromatics.grey3};
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 4px;
 `;
 
 export const Grid = styled.div`
@@ -124,10 +145,11 @@ export const ProjectsContainer = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+  margin-bottom: 70px;
 `;
 
 export const Project = styled.div`
-  width: 40%;
+  width: 45%;
   height: 200px;
   box-sizing: border-box;
 
