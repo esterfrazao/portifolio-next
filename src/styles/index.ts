@@ -23,6 +23,7 @@ export const Main = styled.main`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 25px 40px;
 
   min-height: 90vh;
 `;
@@ -113,6 +114,38 @@ export const Card = styled.a`
     margin: 0;
     font-size: 1.25rem;
     line-height: 1.5;
+  }
+`;
+
+// Projects Page
+export const ProjectsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+`;
+
+export const Project = styled.div`
+  width: 40%;
+  height: 200px;
+  box-sizing: border-box;
+
+  padding: 15px;
+  margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  border: ${({ theme }) => "2px dotted" + theme.color.blues.dark4};
+  border-radius: 5px;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: ${({ theme }) => theme.color.greens.green4};
+    margin: 0;
   }
 `;
 
