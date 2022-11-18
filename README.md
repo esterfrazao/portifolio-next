@@ -6,7 +6,7 @@ Desenvolvida em Next Js, utilizando react, styled-components, axios e typescript
 
 Publicada pelo Vercel em: https://aplicacao-next.vercel.app/ 
 
-**_Demonstração da aplicação em vídeo se encontra [neste link](https://drive.google.com/file/d/1d9nH9teLLKZq6xu3QGIWbrBfyUg6N5XW/view?usp=sharing)_**
+**_Demonstração da aplicação em vídeo se encontra [neste link](https://drive.google.com/file/d/1pSFkGL3xH13uYODFFKRrq90uDAVhPQPd/view?usp=sharing)_**
 
 ## Como rodar localmente?
 - Clone o repositório.
