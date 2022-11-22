@@ -24,10 +24,13 @@ import {
   PresentationContainer,
   Scroll,
   Text,
+  Figure,
 } from "../styles";
 import Link from "next/link";
 import titleFormatter from "../utils/titleFormatter";
 import { IoLogoVercel } from "react-icons/io5";
+import { FaGithubSquare } from "react-icons/fa";
+import { TbBrandLinkedin } from "react-icons/tb";
 
 export default function Home() {
   const { repositories } = useRepositories();
@@ -62,30 +65,24 @@ export default function Home() {
             </IconButton>
           </a>
         </PresentationContainer>
-        <Image
+        <Figure
           priority={true}
           width={400}
           height={500}
           src="/coding.jpg"
           alt="profile"
-          style={{
-            borderRadius: "15px",
-          }}
         />
         <Scroll>
           <BsChevronDown />
         </Scroll>
       </Section>
       <Section datatype="dark">
-        <Image
+        <Figure
           priority={true}
-          width={550}
+          width={400}
           height={430}
           src="/desenvolvedor_web.webp"
           alt="profile"
-          style={{
-            borderRadius: "15px",
-          }}
         />
         <PresentationContainer>
           <h2>Sobre mim</h2>
@@ -97,6 +94,22 @@ export default function Home() {
             área.E agora estou em busca de uma vaga integral como desenvolvedora
             para desenvolver minhas habilidades tecnólogicas e sociais.
           </Text>
+          <ButtonsContainer>
+            <a
+              href="https://www.linkedin.com/in/ester-frazao/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TbBrandLinkedin size="3rem" />
+            </a>
+            <a
+              href="http://github.com/esterfrazao/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithubSquare size="3rem" />
+            </a>
+          </ButtonsContainer>
           <ButtonsContainer>
             <a
               href="https://wa.me/qr/EXQSKL3G4MAKM1"
@@ -119,34 +132,52 @@ export default function Home() {
           </ButtonsContainer>
         </PresentationContainer>
       </Section>
+      {/*
       <BagdesContainer>
-        <Image width={40} height={40} src="/html5_badge.png" alt="HTML Badge" />
-        <Image width={40} height={40} src="/css_badge.png" alt="CSS Badge" />
         <Image
+          priority={true}
+          width={40}
+          height={40}
+          src="/html5_badge.png"
+          alt="HTML Badge"
+        />
+        <Image
+          priority={true}
+          width={40}
+          height={40}
+          src="/css_badge.png"
+          alt="CSS Badge"
+        />
+        <Image
+          priority={true}
           width={40}
           height={40}
           src="/javascript_badge.png"
           alt="Javascript Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/react_badge.png"
           alt="React Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/nodejs_badge.png"
           alt="Node Js Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/python_badge.png"
           alt="Python Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/django_badge.png"
@@ -214,7 +245,7 @@ export default function Home() {
             Visualizar todos os projetos
           </IconButton>
         </Link>
-      </ProjectsSection>
+      </ProjectsSection> */}
     </Container>
   );
 }

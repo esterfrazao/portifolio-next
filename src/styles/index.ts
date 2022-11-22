@@ -42,7 +42,7 @@ export const Scroll = styled.div`
 export const Section = styled.section`
   position: relative;
   padding: 4rem 2rem;
-  min-height: 90vh;
+  min-height: 80vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -69,21 +69,28 @@ export const Text = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 
   div:first-child {
     margin-right: 20px;
   }
+
+  @media (max-width: 700px) {
+    width: 80%;
+    justify-content: center;
+  }
 `;
 
 export const Figure = styled(Image)`
-  min-width: ${(props) => props.width + "px"};
-  min-height: ${(props) => props.height + "px"};
+  max-width: 500px;
+  max-height: 80vh;
   border-radius: 15px;
-  width: 50%;
-  height: auto;
+  width: 45%;
+  margin: 0 15px;
 
   @media (max-width: 700px) {
+    max-width: 300px;
     display: none;
   }
 `;
@@ -146,7 +153,6 @@ export const AboutSection = styled(Section)`
   }
 
   .description {
-    width: 70%;
     h3 {
       font-size: 1.4rem;
     }
@@ -155,6 +161,11 @@ export const AboutSection = styled(Section)`
       font-size: 1.2rem;
       line-height: 1.8rem;
       text-align: justify;
+    }
+
+    @media (min-width: 700px) {
+      width: 70%;
+      align-items: center;
     }
   }
 `;
