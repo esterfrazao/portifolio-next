@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 // GERAIS
@@ -75,6 +76,23 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
+export const Figure = styled(Image)`
+  min-width: ${(props) => props.width + "px"};
+  min-height: ${(props) => props.height + "px"};
+  border-radius: 15px;
+  width: 50%;
+  height: auto;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+
+export const Badge = styled(Image)`
+  max-width: ${(props) => props.width + "px"};
+  max-height: ${(props) => props.height + "px"};
+`;
+
 // HOME PAGE
 export const Tag = styled.span`
   background-color: ${({ theme }) => theme.color.monochromatics.grey7};
@@ -88,11 +106,15 @@ export const CustomizedTitle = styled(Title)`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   b {
     font-weight: 900;
     font-size: 3rem;
     color: ${({ theme }) => theme.color.monochromatics.black};
+  }
+
+  @media (min-width: 700px) {
+    align-items: flex-start;
   }
 `;
 
@@ -151,7 +173,15 @@ export const BagdesContainer = styled.div`
 `;
 
 export const PresentationContainer = styled.div`
-  width: 55%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    width: 55%;
+    align-items: flex-start;
+  }
 `;
 
 export const ExperienceContainer = styled.div`
