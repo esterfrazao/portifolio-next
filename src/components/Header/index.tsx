@@ -1,15 +1,44 @@
 import Link from "next/link";
-import { Contact, ContactsContainer, HeaderContainer, NavBar } from "./style";
+import {
+  Contact,
+  ContactsContainer,
+  DropDownNavBar,
+  HeaderContainer,
+  NavBar,
+} from "./style";
 import { FaLinkedinIn, FaRocketchat } from "react-icons/fa";
+import { useState } from "react";
+import { HiMenu } from "react-icons/hi";
 
 export default function Header() {
-  return (
-    <HeaderContainer>
-      <NavBar>
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  function Navigation() {
+    return (
+      <>
         <Link href="/">Home</Link>
         <Link href="/about">Sobre</Link>
         <Link href="/projects">Projetos</Link>
+      </>
+    );
+  }
+
+  return (
+    <HeaderContainer>
+      <NavBar>
+        <Navigation />
       </NavBar>
+      <DropDownNavBar>
+        <span onClick={() => setIsOpen(!isOpen)}>
+          <HiMenu />
+        </span>
+        {isOpen && (
+          <div>
+            <Navigation />
+          </div>
+        )}
+      </DropDownNavBar>
+
       <ContactsContainer>
         <Contact
           itemProp="30%"
@@ -20,13 +49,13 @@ export default function Header() {
           <span>
             <FaLinkedinIn />
           </span>
-          Linkedin
+          <p>Linkedin</p>
         </Contact>
         <Contact itemProp="65%" type="text">
           <span>
             <FaRocketchat />
           </span>
-          tafnisbonbon@gmail.com
+          <p>tafnisbonbon@gmail.com</p>
         </Contact>
       </ContactsContainer>
     </HeaderContainer>
