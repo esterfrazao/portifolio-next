@@ -132,7 +132,6 @@ export default function Home() {
           </ButtonsContainer>
         </PresentationContainer>
       </Section>
-      {/*
       <BagdesContainer>
         <Image
           priority={true}
@@ -184,6 +183,7 @@ export default function Home() {
           alt="Django Badge"
         />
       </BagdesContainer>
+      {/*
       <AboutSection datatype="dark">
         <h2>Formada na Kenzie Academy Brasil</h2>
         <Image

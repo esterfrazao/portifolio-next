@@ -179,7 +179,7 @@ export const BagdesContainer = styled.div`
   background-color: ${({ theme }) => theme.color.monochromatics.grey1};
 
   img:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 2%;
   }
 `;
 
