@@ -139,6 +139,8 @@ export const Description = styled.p`
 export const ProjectsSection = styled(Section)`
   flex-direction: column;
   align-items: center;
+  padding: 0;
+  padding-bottom: 2rem;
 
   h2 {
     font-size: 2.5rem;
@@ -153,6 +155,7 @@ export const AboutSection = styled(Section)`
   }
 
   .description {
+    width: 70%;
     h3 {
       font-size: 1.4rem;
     }
@@ -163,10 +166,18 @@ export const AboutSection = styled(Section)`
       text-align: justify;
     }
 
-    @media (min-width: 700px) {
-      width: 70%;
+    @media (max-width: 700px) {
+      width: 100%;
       align-items: center;
+      p {
+        text-align: center;
+      }
     }
+  }
+
+  @media (max-width: 700px) {
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -245,24 +256,26 @@ export const ProjectsContainer = styled.div`
 `;
 
 export const Project = styled.div`
-  width: 45%;
-  height: 200px;
-  box-sizing: border-box;
-
-  padding: 15px;
-  margin: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 0 0 20px;
+  width: 85%;
 
-  border: ${({ theme }) => "2px dotted" + theme.color.blues.dark4};
+  border: ${({ theme }) => "3px dotted" + theme.color.blues.dark3};
   border-radius: 5px;
+  padding: 15px;
 
   h3 {
     font-size: 2rem;
     font-weight: 500;
     color: ${({ theme }) => theme.color.greens.green4};
     margin: 0;
+  }
+
+  @media (min-width: 700px) {
+    width: 40%;
+    min-height: 250px;
+    margin: 20px;
   }
 `;

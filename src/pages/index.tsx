@@ -183,7 +183,6 @@ export default function Home() {
           alt="Django Badge"
         />
       </BagdesContainer>
-      {/*
       <AboutSection datatype="dark">
         <h2>Formada na Kenzie Academy Brasil</h2>
         <Image
@@ -206,21 +205,21 @@ export default function Home() {
       </AboutSection>
       <ProjectsSection datatype="light">
         <h2>Projetos</h2>
-        <ProjectsContainer style={{ width: "85%" }}>
+        <ProjectsContainer>
           {repositories?.slice(0, 6).map((repo) => {
             if (!repo.fork) {
               return (
                 <Project key={repo.id}>
                   <h3>{titleFormatter(repo.name)}</h3>
                   <p>{repo.description}</p>
-                  <ButtonsContainer style={{ margin: 0 }}>
+                  <ButtonsContainer style={{ margin: 0, width: "100%" }}>
                     <a
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <IconButton icon={<BsGithub />} color="green">
-                        Seguir para o repositório
+                        Repositório
                       </IconButton>
                     </a>
                     {repo.homepage && (
@@ -245,7 +244,7 @@ export default function Home() {
             Visualizar todos os projetos
           </IconButton>
         </Link>
-      </ProjectsSection> */}
+      </ProjectsSection>
     </Container>
   );
 }
