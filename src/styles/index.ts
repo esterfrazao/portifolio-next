@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 // GERAIS
@@ -41,7 +42,7 @@ export const Scroll = styled.div`
 export const Section = styled.section`
   position: relative;
   padding: 4rem 2rem;
-  min-height: 90vh;
+  min-height: 80vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -68,11 +69,35 @@ export const Text = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 
   div:first-child {
     margin-right: 20px;
   }
+
+  @media (max-width: 700px) {
+    width: 80%;
+    justify-content: center;
+  }
+`;
+
+export const Figure = styled(Image)`
+  max-width: 500px;
+  max-height: 80vh;
+  border-radius: 15px;
+  width: 45%;
+  margin: 0 15px;
+
+  @media (max-width: 700px) {
+    max-width: 300px;
+    display: none;
+  }
+`;
+
+export const Badge = styled(Image)`
+  max-width: ${(props) => props.width + "px"};
+  max-height: ${(props) => props.height + "px"};
 `;
 
 // HOME PAGE
@@ -88,11 +113,15 @@ export const CustomizedTitle = styled(Title)`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   b {
     font-weight: 900;
     font-size: 3rem;
     color: ${({ theme }) => theme.color.monochromatics.black};
+  }
+
+  @media (min-width: 700px) {
+    align-items: flex-start;
   }
 `;
 
@@ -110,6 +139,8 @@ export const Description = styled.p`
 export const ProjectsSection = styled(Section)`
   flex-direction: column;
   align-items: center;
+  padding: 0;
+  padding-bottom: 2rem;
 
   h2 {
     font-size: 2.5rem;
@@ -134,6 +165,19 @@ export const AboutSection = styled(Section)`
       line-height: 1.8rem;
       text-align: justify;
     }
+
+    @media (max-width: 700px) {
+      width: 100%;
+      align-items: center;
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -146,12 +190,20 @@ export const BagdesContainer = styled.div`
   background-color: ${({ theme }) => theme.color.monochromatics.grey1};
 
   img:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 2%;
   }
 `;
 
 export const PresentationContainer = styled.div`
-  width: 55%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    width: 55%;
+    align-items: flex-start;
+  }
 `;
 
 export const ExperienceContainer = styled.div`
@@ -204,24 +256,26 @@ export const ProjectsContainer = styled.div`
 `;
 
 export const Project = styled.div`
-  width: 45%;
-  height: 200px;
-  box-sizing: border-box;
-
-  padding: 15px;
-  margin: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 0 0 20px;
+  width: 85%;
 
-  border: ${({ theme }) => "2px dotted" + theme.color.blues.dark4};
+  border: ${({ theme }) => "3px dotted" + theme.color.blues.dark3};
   border-radius: 5px;
+  padding: 15px;
 
   h3 {
     font-size: 2rem;
     font-weight: 500;
     color: ${({ theme }) => theme.color.greens.green4};
     margin: 0;
+  }
+
+  @media (min-width: 700px) {
+    width: 40%;
+    min-height: 250px;
+    margin: 20px;
   }
 `;
