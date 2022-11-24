@@ -37,6 +37,10 @@ export const Scroll = styled.div`
   font-size: 4rem;
   position: absolute;
   bottom: 0;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export const Section = styled.section`
@@ -231,7 +235,7 @@ export const ExperienceContainer = styled.div`
       width: 50%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
 
       p {
         text-align: justify;
@@ -241,8 +245,36 @@ export const ExperienceContainer = styled.div`
     .vertical-line {
       width: 5px;
       border-left: ${({ theme }) => "3px dotted" + theme.color.greens.green2};
+
+      @media (max-width: 700px) {
+        display: none;
+      }
     }
   }
+
+  @media (max-width: 700px) {
+    .experience-box {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      div {
+        width: 80%;
+        align-items: center;
+      }
+    }
+
+    .horizontal-line {
+      width: 100%;
+      height: 5px;
+      border-bottom: ${({ theme }) => "3px dotted" + theme.color.greens.green2};
+    }
+  }
+`;
+
+export const ProfilePicture = styled(Figure)`
+  max-width: 400px;
 `;
 
 // Projects Page

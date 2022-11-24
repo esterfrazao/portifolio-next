@@ -9,6 +9,8 @@ import {
   PresentationContainer,
   Scroll,
   Text,
+  Figure,
+  ProfilePicture,
 } from "../styles";
 import Image from "next/image";
 import IconButton from "../components/IconButton";
@@ -62,15 +64,12 @@ export default function About() {
             </IconButton>
           </ButtonsContainer>
         </PresentationContainer>
-        <Image
+        <ProfilePicture
           priority={true}
           width={400}
           height={430}
           src="/my_profile.jpeg"
           alt="profile"
-          style={{
-            borderRadius: "15px",
-          }}
         />
         <Scroll>
           <BsChevronDown />
@@ -133,7 +132,7 @@ export default function About() {
               </p>
             </div>
           </div>
-
+          <span className="horizontal-line"></span>
           <h2>Histórico de Trabalho</h2>
           <div className="experience-box">
             <Image
