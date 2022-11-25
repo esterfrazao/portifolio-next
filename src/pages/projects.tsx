@@ -33,14 +33,14 @@ export default function Home() {
                 <Project key={repo.id}>
                   <h3>{titleFormatter(repo.name)}</h3>
                   <p>{repo.description}</p>
-                  <ButtonsContainer style={{ margin: 0 }}>
+                  <ButtonsContainer style={{ margin: 0, marginLeft: "15px" }}>
                     <a
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <IconButton icon={<BsGithub />} color="green">
-                        Seguir para o repositório
+                        Repositório
                       </IconButton>
                     </a>
                     {repo.homepage && (
