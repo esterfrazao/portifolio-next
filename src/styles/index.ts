@@ -291,7 +291,7 @@ export const Project = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 0 0 20px;
+  margin: 20px 0 0;
   width: 85%;
 
   border: ${({ theme }) => "3px dotted" + theme.color.blues.dark3};
@@ -308,6 +308,7 @@ export const Project = styled.div`
   @media (min-width: 700px) {
     width: 40%;
     min-height: 250px;
+    max-width: 500px;
     margin: 20px;
   }
 `;
