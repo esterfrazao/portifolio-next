@@ -105,7 +105,7 @@ export const Contact = styled.a`
   color: ${({ theme }) => theme.color.monochromatics.grey8};
   border: 2px solid #ffffff00;
   border-radius: 5px;
-  padding: 2px;
+  padding-left: 4%;
 
   display: flex;
   flex-direction: row;

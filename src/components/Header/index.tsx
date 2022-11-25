@@ -41,7 +41,7 @@ export default function Header() {
 
       <ContactsContainer>
         <Contact
-          itemProp="30%"
+          itemProp="38%"
           href="https://www.linkedin.com/in/ester-frazao/"
           target="_blank"
           rel="noopener noreferrer"
