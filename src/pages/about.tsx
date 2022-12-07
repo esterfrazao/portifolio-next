@@ -40,7 +40,7 @@ export default function About() {
             algumas coisas da área de tecnologia, mas não foi antes de estudar
             no curso da Kenzie Academy Brasil que entrei profissionalmente nessa
             área. E agora estou em busca de uma vaga integral onde possa
-            desenvolver e por em prática minhas habilidades tecnólogicas e
+            desenvolver e por em prática minhas habilidades tecnológicas e
             sociais.
           </Text>
           <ButtonsContainer>
@@ -76,33 +76,57 @@ export default function About() {
         </Scroll>
       </Section>
       <BagdesContainer>
-        <Image width={40} height={40} src="/html5_badge.png" alt="HTML Badge" />
-        <Image width={40} height={40} src="/css_badge.png" alt="CSS Badge" />
         <Image
+          priority={true}
+          width={40}
+          height={40}
+          src="/html5_badge.png"
+          alt="HTML Badge"
+        />
+        <Image
+          priority={true}
+          width={40}
+          height={40}
+          src="/css_badge.png"
+          alt="CSS Badge"
+        />
+        <Image
+          priority={true}
           width={40}
           height={40}
           src="/javascript_badge.png"
           alt="Javascript Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/react_badge.png"
           alt="React Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/nodejs_badge.png"
           alt="Node Js Badge"
         />
         <Image
+          priority={true}
+          width={40}
+          height={40}
+          src="/typescript_badge.png"
+          alt="Typescript Badge"
+        />
+        <Image
+          priority={true}
           width={40}
           height={40}
           src="/python_badge.png"
           alt="Python Badge"
         />
         <Image
+          priority={true}
           width={40}
           height={40}
           src="/django_badge.png"

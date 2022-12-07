@@ -192,6 +192,8 @@ export const BagdesContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.color.monochromatics.grey1};
+  overflow-x: auto;
+  overflow-y: clip;
 
   img:not(:last-child) {
     margin-right: 2%;

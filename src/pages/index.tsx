@@ -50,9 +50,9 @@ export default function Home() {
             Olá, eu sou <b>Ester Frazão!</b>
           </CustomizedTitle>
           <Description>
-            Desenvolvedora web FullStack formada pela Kenzie Academy Brasil, em
+            Desenvolvedora Web FullStack formada pela Kenzie Academy Brasil, em
             busca de uma posição no mercado de trabalho de tecnologia, com
-            conhecimentos em HTML, CSS, Javasvript, React JS, Node Js, Python e
+            conhecimentos em HTML, CSS, Javascript, React JS, Node Js, Python e
             Django.
           </Description>
           <a
@@ -91,8 +91,9 @@ export default function Home() {
             por tecnologia. E por meio de contatos e de pesquisas próprias
             acabei estudando algumas coisas da área de tecnologia, e foi com o
             suporte da Kenzie Academy Brasil que entrei profissionalmente nessa
-            área.E agora estou em busca de uma vaga integral como desenvolvedora
-            para desenvolver minhas habilidades tecnólogicas e sociais.
+            área. E agora estou em busca de uma vaga integral como
+            desenvolvedora para desenvolver minhas habilidades tecnológicas e
+            sociais.
           </Text>
           <ButtonsContainer>
             <a
@@ -167,6 +168,13 @@ export default function Home() {
           height={40}
           src="/nodejs_badge.png"
           alt="Node Js Badge"
+        />
+        <Image
+          priority={true}
+          width={40}
+          height={40}
+          src="/typescript_badge.png"
+          alt="Typescript Badge"
         />
         <Image
           priority={true}
