@@ -190,7 +190,7 @@ export const BagdesContainer = styled.div`
   width: 100%;
   padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: ${({ theme }) => theme.color.monochromatics.grey1};
   overflow-x: auto;
   overflow-y: clip;
