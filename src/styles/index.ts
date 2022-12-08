@@ -198,6 +198,10 @@ export const BagdesContainer = styled.div`
   img:not(:last-child) {
     margin-right: 2%;
   }
+
+  @media (min-width: 700px) {
+    justify-content: center;
+  }
 `;
 
 export const PresentationContainer = styled.div`
